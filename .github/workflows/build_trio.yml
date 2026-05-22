@@ -222,9 +222,11 @@ jobs:
       )
     steps:
       - name: Select Xcode version
-        run: "sudo xcode-select --switch /Applications/Xcode_16.4.app/Contents/Developer"
-        ##run: "sudo xcode-select --switch /Applications/Xcode_16.3.app/Contents/Developer"
-      
+        # The original Xcode used for Trio 0.2.9 main was run Xcode 16.3.
+        # The change to macOS 15 utilized 16.4.
+        # The latest available as of 5/22/2026 is 26.5.
+        run: "sudo xcode-select --switch /Applications/Xcode_26.5.app/Contents/Developer"
+
       - name: Checkout Repo for syncing
         if: |
           needs.check_alive_and_permissions.outputs.WORKFLOW_PERMISSION == 'true' &&
