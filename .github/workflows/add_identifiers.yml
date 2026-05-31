@@ -12,10 +12,7 @@ jobs:
   identifiers:
     name: Add Identifiers
     needs: validate
-    # The original main branch of Trio 0.2.9 build was run on macos-14.
-    # We revised that to macos-15 based on the runners available on github.
-    # As of 4/28/2026, Apple now requires apps to have been built on macos-26.
-    runs-on: macos-26
+    runs-on: macos-15
     steps:
       # Checks-out the repo
       - name: Checkout Repo
